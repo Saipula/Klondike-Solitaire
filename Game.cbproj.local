@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.383,C:\Users\Персик\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.232,=C:\Users\Персик\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.770,C:\Users\Персик\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\Game.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.717,C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\class.h=C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.896,C:\Users\Персик\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\main.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.650,C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\Project1PCH1.h=C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\GamePCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.717,C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\class.cpp=C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.896,C:\Users\Персик\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\main.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.532,=C:\Users\Персик\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.896,C:\Users\Персик\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\main.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.306,=C:\Users\Персик\Documents\Курсачи\Пасьянс косынка\Unit1.cpp</Transaction>
+  </Transactions>
+</BorlandProject>
