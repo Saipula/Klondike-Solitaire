@@ -6,18 +6,19 @@
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-Game::Game(TImage *img, TImageList *list) {
+Game::Game(TImage *img, TImageList *list, TImage *desktop) {
 	this->device = img->Canvas;
-	device->Brush->Color = clBtnFace;
+    device->Brush->Style = bsClear;
 	device->Pen->Width = 2;
-
-	Client_H = img->Height;
-	Client_W = img->Width;
 
 	Card_W = list->Width;
 	Card_H = list->Height;
 
-	BOX_0_1 = new TPoint(5, 5);
+	Desk_Size = desktop->Height;
+	this->desktop = new TPicture();
+	this->desktop = desktop->Picture;
+
+	BOX_0_1 = new TPoint(45, 5);
 	BOX_2_8 = new TPoint(BOX_0_1->x, BOX_0_1->y + Card_H + Card_sm);
 	BOX_9_12 = new TPoint(BOX_0_1->x + Card_W * 3 + Card_sm * 3, BOX_0_1->y);
 
@@ -58,6 +59,8 @@ Game::Game(TImage *img, TImageList *list) {
 				sCard_Box[i + 2][amount - 2].Visible = false; // карты невидимы
 		}
 	}
+
+    Show();
 }
 
 bool Game::MoveCard(short s, short d) {
@@ -192,8 +195,11 @@ void Game::ChangeCard(short s_box, short s_index, short d_box, short d_index) {
 }
 
 void Game::Show() {
+	for (short i = 0; i < 6; i++)
+		for (short j = 0; j < 4; j++)
+			device->Draw(i*Desk_Size, j*Desk_Size, desktop->Graphic);
+
 	// Card_W*c + Card_sm*c , это смезение по Х для каждого следующего ящика!
-	device->Rectangle(-1, -1, Client_W, Client_H); // Очистка
 
 	// Отрисовка ящиков 0-1
 	for (short i = 0; i < 2; i++) {
@@ -210,15 +216,14 @@ void Game::Show() {
 		device->Draw(x, y, sCard_Box[i][colvo].Pict->Graphic);
 
 		// Отрисовка выбраной--------------------
-		if (sCard_Box[i][colvo].Select)
+		if (sCard_Box[i][colvo].Select){
 			device->Pen->Color = clLime;
-		else
-			device->Pen->Color = clBtnFace;
 
-		device->MoveTo(x, y);
-		device->LineTo(x, y + Card_H);
-		device->MoveTo(x + Card_W, y + 1);
-		device->LineTo(x + Card_W, y + Card_H + 1);
+			device->MoveTo(x, y);
+			device->LineTo(x, y + Card_H);
+			device->MoveTo(x + Card_W, y + 1);
+			device->LineTo(x + Card_W, y + Card_H + 1);
+		}
 		// --------------------------------------
 	}
 
@@ -241,15 +246,14 @@ void Game::Show() {
 				device->Draw(x, y, back->Graphic);
 
 			// Отрисовка выбраной--------------------
-			if (sCard_Box[i][j].Select)
+			if (sCard_Box[i][j].Select){
 				device->Pen->Color = clLime;
-			else
-				device->Pen->Color = clBtnFace;
 
-			device->MoveTo(x, y);
-			device->LineTo(x, y + Card_H);
-			device->MoveTo(x + Card_W, y + 1);
-			device->LineTo(x + Card_W, y + Card_H + 1);
+				device->MoveTo(x, y);
+				device->LineTo(x, y + Card_H);
+				device->MoveTo(x + Card_W, y + 1);
+				device->LineTo(x + Card_W, y + Card_H + 1);
+			}
 			// --------------------------------------
 		}
 	}
@@ -269,15 +273,14 @@ void Game::Show() {
 		device->Draw(x, y, sCard_Box[i][colvo].Pict->Graphic);
 
 		// Отрисовка выбраной--------------------
-		if (sCard_Box[i][colvo].Select)
+		if (sCard_Box[i][colvo].Select){
 			device->Pen->Color = clLime;
-		else
-			device->Pen->Color = clBtnFace;
 
-		device->MoveTo(x, y);
-		device->LineTo(x, y + Card_H);
-		device->MoveTo(x + Card_W, y + 1);
-		device->LineTo(x + Card_W, y + Card_H + 1);
+			device->MoveTo(x, y);
+			device->LineTo(x, y + Card_H);
+			device->MoveTo(x + Card_W, y + 1);
+			device->LineTo(x + Card_W, y + Card_H + 1);
+		}
 		// --------------------------------------
 	}
 }
